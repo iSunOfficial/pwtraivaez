@@ -13,7 +13,7 @@ namespace PolityBot.Controllers
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
-        {аыаываы
+        {
             return new string[] { "value1", "value2" };
         }
 
