@@ -10,7 +10,7 @@
         /// <summary>
         /// Токен группы
         /// </summary>
-        public static readonly string AccessToken = "98aa139613f9d37874ce62ace805fda9125c6c0d962bdebc984c1c71d4059726b404c83d87180df9efe2c";
+        public static readonly string AccessToken = "";
 
         /// <summary>
         /// Строка, которую должен вернуть сервер
@@ -29,6 +29,6 @@
 
         /* ДЛЯ НАСТРОЙКИ СТРАНИЦЫ (АДМИНА ГРУППЫ) */
 
-        public static readonly string AccountToken = "1329a29a2d71121bc07812d19137abdd09a9d6aa689d775c400d566ca5cf1893391c4fe602f2d0a3bd55b";
+        public static readonly string AccountToken = "";
     }
 }
