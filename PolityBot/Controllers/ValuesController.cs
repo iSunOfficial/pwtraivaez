@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +14,13 @@ namespace PolityBot.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+<<<<<<< Updated upstream
             //поменял
 
             return new string[] { "value1", "value2" };
+=======
+            return new string[] { "value1", "value2" }; //Дарова ебать
+>>>>>>> Stashed changes
         }
 
         // GET api/values/5
