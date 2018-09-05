@@ -14,6 +14,8 @@ namespace PolityBot.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
+            //поменял
+
             return new string[] { "value1", "value2" };
         }
 
