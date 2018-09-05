@@ -14,10 +14,11 @@ namespace PolityBot
     {
         public static void Main(string[] args)
         {
+            Logger.ManagerLogger("bot enabled");
             CreateWebHostBuilder(args).Build().Run();
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) => //Кто прочитал тот работать блять
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
     }

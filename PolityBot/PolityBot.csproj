@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="vknet" Version="1.37.1" />
   </ItemGroup>
 
 </Project>
