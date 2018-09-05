@@ -31,11 +31,12 @@ namespace PolityBot
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (env.IsDevelopment()) //Это короче иф, хуйня такая которая если типа ок да
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
+            else  // А это елсе, местный гопарь который постоянно орет ИНАЧЕ 
+			      //                                  что я несу убейте меня
             {
                 app.UseHsts();
             }
