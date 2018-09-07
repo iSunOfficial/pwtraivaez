@@ -27,8 +27,10 @@ namespace PolityBot.Controllers
                         return new OkObjectResult(BotConfig.Confirmation);
                     case "message_new":
                         var msg = JsonConvert.DeserializeObject<Message>(updates.Object?.ToString());
-                        if (msg.Text != "" && msg.Text.IndexOf("!") < 0) // Временный фикс
+
+                        if (msg.Text != "" && msg.Text.IndexOf(BotConfig.BotName) < 0) // Временный фикс
                             break;
+
                         Logger.ManagerLogger(updates.Object?.ToString());
                         Task.Factory.StartNew(() => VK.MessageExt.MessageSend(Common.GetGroupVkApi(), msg, Commands.CommandList.ExecuteCommand(msg).ToString()));
                         break;

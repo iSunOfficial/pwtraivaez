@@ -29,6 +29,12 @@
 
         /* ДЛЯ НАСТРОЙКИ СТРАНИЦЫ (АДМИНА ГРУППЫ) */
 
+        /// <summary>
+        /// Токен страницы
+        /// </summary>
         public static readonly string AccountToken = "";
+
+
+        public static readonly string BotName = "!";
     }
 }

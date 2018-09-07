@@ -30,7 +30,10 @@ namespace PolityBot.Commands
                 foreach (var command in Commands)
                 {
                     if (!command.Allias.Contains(msg.Text)) continue;
-                    command.Execute(msg.Text);
+
+                    if (command.CanExecute(msg.Text))
+                        command.Execute(msg.Text);
+
                     result = command.Result;
                     break;
                 }

@@ -12,5 +12,6 @@ namespace PolityBot.Commands
         string Result { get; }
 
         Task Execute(string param);
+        bool CanExecute(string msg);
     }
 }

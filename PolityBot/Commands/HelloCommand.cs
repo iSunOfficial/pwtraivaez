@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 namespace PolityBot.Commands
 {
     public class HelloCommand : ICommand
@@ -14,5 +13,7 @@ namespace PolityBot.Commands
         {
             Result = "Привет";
         }
+
+        public bool CanExecute(string msg) { return true; }
     }
 }
