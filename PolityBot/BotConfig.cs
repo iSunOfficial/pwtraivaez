@@ -10,7 +10,7 @@
         /// <summary>
         /// Токен группы
         /// </summary>
-        public static readonly string AccessToken = "";
+        public static readonly string AccessToken = "d993b44dd42012f4dd99a53e9098654873922a61e0a8dfdf58c12ff003f0ece798444f224f937030e55d4";
 
         /// <summary>
         /// Строка, которую должен вернуть сервер

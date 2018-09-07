@@ -13,7 +13,7 @@ namespace PolityBot.Controllers
     public class CallbackController : Controller
     {
         [HttpPost]
-        public IActionResult Callback([FromBody]Updates updates)
+        public IActionResult Get([FromBody]Updates updates)
         {
             try
             {
@@ -26,7 +26,11 @@ namespace PolityBot.Controllers
                     case "confirmation":
                         return new OkObjectResult(BotConfig.Confirmation);
                     case "message_new":
-                        Task.Factory.StartNew(() => LogicPolity.Logic(JsonConvert.DeserializeObject<Message>(updates.Object?.ToString())));
+                        var msg = JsonConvert.DeserializeObject<Message>(updates.Object?.ToString());
+                        if (msg.Text != "" && msg.Text.IndexOf("!") < 0) // Временный фикс
+                            break;
+                        Logger.ManagerLogger(updates.Object?.ToString());
+                        Task.Factory.StartNew(() => VK.MessageExt.MessageSend(Common.GetGroupVkApi(), msg, Commands.CommandList.ExecuteCommand(msg).ToString()));
                         break;
                 }
             }
