@@ -6,7 +6,7 @@ namespace PolityBot.Commands
 {
     public class HelloCommand : ICommand
     {
-        public List<string> Allias { get; } = new List<string> { "привет" };
+        public List<string> Allias { get; } = new List<string> { "привет", };
         public string Result { get; set; }
 
         public async Task Execute(string param)
@@ -15,5 +15,16 @@ namespace PolityBot.Commands
         }
 
         public bool CanExecute(string msg) { return true; }
+
+
+        public string Name { get; } = "Регистрация";
+
+        public string Description { get; } = "Нахуй описание, потом придумаем";
+
+        public string Example { get; } = $"{BotConfig.BotName}Кто я";
+
+
+
+
     }
 }
