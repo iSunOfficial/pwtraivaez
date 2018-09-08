@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace FirstApp
+namespace PolityBot
 {
     public partial class helloappdbContext : DbContext
     {
@@ -18,6 +18,6 @@ namespace FirstApp
         {
         }
 
-     //   public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
     }
 }

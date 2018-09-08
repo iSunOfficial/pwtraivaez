@@ -4,22 +4,22 @@ using System.Linq;
 using System.Threading.Tasks;
 namespace PolityBot.Commands
 {
-    public class HelloCommand : ICommand
+    public class PasportCommand : ICommand 
     {
-        public List<string> Allias { get; } = new List<string> { "привет", };
+        public List<string> Allias { get; } = new List<string> { "паспорт", "пасспорт", "паспарт", "пасспарт", "паспорь", };
 
-        public string Name { get; } = "Привет";
+        public string Name { get; } = "паспорт";
 
 
 
         public string Description { get; } = "Нахуй описание, потом придумаем";
 
-        public string Example { get; } = $"{BotConfig.BotName}Привет";
+        public string Example { get; } = $"{BotConfig.BotName}паспорт";
 
 
         public async Task Execute(string param)
         {
-            Result = "Привет";
+            Result = "Твой паспорт";
         }
 
         public string Result { get; set; }
