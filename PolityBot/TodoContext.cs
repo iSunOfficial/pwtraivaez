@@ -1,10 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace PolityBot
 {
-    public partial class helloappdbContext : DbContext
+    public partial class TodoContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -14,10 +12,8 @@ namespace PolityBot
             }
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder) { }
 
-        public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<UsersItem> UsersItem { get; set; }
     }
 }
