@@ -13,5 +13,11 @@ namespace PolityBot.Commands
 
         Task Execute(string param);
         bool CanExecute(string msg);
+
+       string Name { get; }                       // Название команды
+       string Description { get; }                // Описание команды
+       string Example { get; }                    // Как ее использовать
+
+
     }
 }
