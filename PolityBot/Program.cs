@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
+using System;
+using System.Linq;
 
 namespace PolityBot
 {
@@ -15,26 +10,24 @@ namespace PolityBot
         public static void Main(string[] args)
         {
             Logger.ManagerLogger("bot enabled");
-            CreateWebHostBuilder(args).Build().Run();
-            
-            //___________________________________________________________________
-            using (helloappdbContext db = new helloappdbContext())
+            try
             {
-                // получаем объекты из бд и выводим на консоль
-                var users = db.Users.ToList();
-                Console.WriteLine("Список объектов:");
-                foreach (Users u in users)
+                using (TodoContext db = new TodoContext())
                 {
-                    Console.WriteLine($"{u.Id}.{u.Name} - {u.Age}");
+                    // получаем объекты из бд и выводим на консоль
+                    var users = db.UsersItem.ToList();
+                    Logger.ManagerLogger("Список объектов:");
+
+                    if (users.Count() == 0)
+                        Logger.ManagerLogger(0);
+
+                    foreach (UsersItem u in users)
+                    {
+                        Logger.ManagerLogger($"{u.Id}.{u.Name} - {u.Age}");
+                    }
                 }
-            }
-            Console.ReadKey();
-            //___________________________________________________________________
-
-
-
-
-
+            } catch (Exception ex) { Logger.ManagerLogger(ex); }
+            CreateWebHostBuilder(args).Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

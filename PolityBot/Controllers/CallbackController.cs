@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -28,7 +29,7 @@ namespace PolityBot.Controllers
                     case "message_new":
                         var msg = JsonConvert.DeserializeObject<Message>(updates.Object?.ToString());
 
-                        if (msg.Text != "" && msg.Text.IndexOf(BotConfig.BotName) < 0) // Временный фикс
+                        if (msg.Text != "" && msg.Text.IndexOf(BotConfig.BotName) < 0) // Временный мега ахуенный фикс ( я б ему дал )
                             break;
 
                         Logger.ManagerLogger(updates.Object?.ToString());
