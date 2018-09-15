@@ -31,8 +31,10 @@ namespace PolityBot.Commands
                 {
                     if (!command.Allias.Contains(msg.Text)) continue;
 
-                    if (command.CanExecute(msg.Text))
-                        command.Execute(msg.Text);
+                    if (0 < command.Rangs)   // bd, if rang 0, fix                // Древняя магия
+
+                        if (command.CanExecute(msg.Text))
+                       command.Execute(msg.Text);
 
                     result = command.Result;
                     break;

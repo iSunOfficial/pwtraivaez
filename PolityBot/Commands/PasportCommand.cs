@@ -26,6 +26,6 @@ namespace PolityBot.Commands
 
         public bool CanExecute(string msg) { return true; }
 
-
+        public byte Rangs { get; } = 0;
     }
 }

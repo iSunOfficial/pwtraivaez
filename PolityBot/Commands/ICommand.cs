@@ -18,6 +18,8 @@ namespace PolityBot.Commands
        string Description { get; }                // Описание команды
        string Example { get; }                    // Как ее использовать
 
+       byte Rangs { get; }      // С ноги в ебало добавил
+
 
     }
 }

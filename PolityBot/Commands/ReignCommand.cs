@@ -26,6 +26,8 @@ namespace PolityBot.Commands
 
         public bool CanExecute { get; } = false;
 
+        public byte Rangs { get; } = 0;
+
 
         //_________________________________________________________________________________________________________________
         public List<string> Allias => throw new NotImplementedException();
