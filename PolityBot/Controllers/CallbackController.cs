@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -29,7 +29,11 @@ namespace PolityBot.Controllers
                     case "message_new":
                         var msg = JsonConvert.DeserializeObject<Message>(updates.Object?.ToString());
 
-                        if (msg.Text != "" && msg.Text.IndexOf(BotConfig.BotName) < 0) // Временный мега ахуенный фикс ( я б ему дал )
+                        if (!Filters.MsgFilter(msg))
+                            break;
+                        //    ^ db logic
+
+                        if (msg.Text.IndexOf(BotConfig.BotName) < 0) // Временный супер мега ахуенный топ-фикс ( я б ему дал )
                             break;
 
                         Logger.ManagerLogger(updates.Object?.ToString());
